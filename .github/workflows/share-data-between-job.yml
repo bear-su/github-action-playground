@@ -9,7 +9,7 @@ jobs:
     steps:
       - shell: bash
         run: |
-          expr 3 + 7 > math-operation.txt
+          expr 1 + 3 > math-operation.txt
       - name: Upload Result
         uses: actions/upload-artifact@v3
         with:
@@ -29,5 +29,5 @@ jobs:
         run: |
           value=`cat math-operation.txt`
           echo "value = $value"
-          result = $value * 10
+          result = $((value * 10))
           echo "result = $result"
