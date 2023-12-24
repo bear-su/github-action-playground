@@ -28,4 +28,6 @@ jobs:
       - shell: bash
         run: |
           value=`cat math-operation.txt`
-          expr $value \* 9 > math-operation.txt
+          echo "value = $value"
+          result = $value * 10
+          echo "result = $result"
