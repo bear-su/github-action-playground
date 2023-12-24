@@ -29,5 +29,4 @@ jobs:
         run: |
           value=`cat math-operation.txt`
           echo "value = $value"
-          result = $((value * 10))
-          echo "result = $result"
+          echo $(($value * 10))
