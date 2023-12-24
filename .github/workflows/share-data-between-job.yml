@@ -15,3 +15,17 @@ jobs:
         with:
           name: result
           path: math-operation.txt
+
+  job_2:
+    name: Multiply by 10
+    needs: job_1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Result
+        uses: actions/download-artifact@v3
+        with:
+          name: result
+      - shell: bash
+        run: |
+          value=`cat math-operation.txt`
+          expr $value \* 9 > math-operation.txt
